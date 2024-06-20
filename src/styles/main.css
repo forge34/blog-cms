@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body,
+body > #root {
+  height: 100dvh;
+  width: 100dvw;
+}
+
+.form {
+  all: unset;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  border-style: solid;
+  border-radius: 12px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.text-input {
+  display: flex;
+  flex-direction: column;
+  font-size: larger;
+
+  label {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+
+  input {
+    background-color: white;
+    border-style: solid;
+    padding: 0.05em;
+    border-radius: 5px;
+    font-size: inherit;
+    max-width: 50ch;
+  }
+}
+
+.text-input > input:valid {
+  border-color: green;
+  outline-color: green;
+}
+
+.text-input > input:invalid {
+  border-color: red;
+  outline-color: red;
+}
+
+.loginBtn {
+  background-color: white;
+  border-radius: 7px;
+  border-width: 1px;
+  margin-top: 1em;
+  align-self: center;
+  padding: 0.5em 1em;
+}
+
+.checkbox {
+  margin: 0.75em 0;
+
+  :nth-child(1) {
+    margin-right: 0.25em;
+  }
+}
