@@ -1,6 +1,7 @@
-import { Navigate, Outlet, createBrowserRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 import Login from "./login";
 import { LoginAction } from "./hooks-loaders/actions";
+import Home from "./home";
 
 const routes = createBrowserRouter([
   {
@@ -14,7 +15,7 @@ const routes = createBrowserRouter([
   },
   {
     path: "/users",
-    element: <h1>Welcome to users page</h1>,
+    element: <Home></Home>,
     children: [
       {
         path: "posts",
