@@ -4,9 +4,8 @@ import { TextInput } from "./components/text-input";
 function Login() {
   const actionData = useActionData();
 
-    
   if (actionData?.ok != undefined) {
-    return <Navigate to={"/users"}></Navigate>;
+    return <Navigate to={"/user"}></Navigate>;
   }
 
   return (

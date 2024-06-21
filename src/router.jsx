@@ -2,6 +2,7 @@ import { Navigate, createBrowserRouter } from "react-router-dom";
 import Login from "./login";
 import { LoginAction } from "./hooks-loaders/actions";
 import Home from "./home";
+import PostPage from "./posts-page";
 
 const routes = createBrowserRouter([
   {
@@ -14,11 +15,18 @@ const routes = createBrowserRouter([
     element: <Login></Login>,
   },
   {
-    path: "/users",
+    path: "/user",
     element: <Home></Home>,
     children: [
       {
         path: "posts",
+        loader: () => {
+          return fetch("http://localhost:3000/api/user/posts", {
+            mode: "cors",
+            credentials: "include",
+          });
+        },
+        element: <PostPage></PostPage>,
       },
       {
         path: "comments",
