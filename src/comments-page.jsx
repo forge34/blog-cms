@@ -1,9 +1,10 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import styles from "./styles/post-page.module.css";
 
 function CommentsPage() {
   const data = useLoaderData();
-  console.log(data);
+
+  const navigate = useNavigate();
   async function handleDelete(id) {
     let res = await fetch(`http://localhost:3000/api/comments/${id}`, {
       mode: "cors",
@@ -27,7 +28,15 @@ function CommentsPage() {
               </div>
               <h3 className={styles.title}>{it.body}</h3>
             </div>
-            <button type="button" className={styles.editBtn}>
+            <button
+              type="button"
+              onClick={() => {
+                navigate("/user/comment/edit", {
+                  state: { id: it._id, body: it.body },
+                });
+              }}
+              className={styles.editBtn}
+            >
               Edit
             </button>
 
