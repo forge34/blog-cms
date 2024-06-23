@@ -8,7 +8,7 @@ const TextInput = ({
   password = false,
   inputProps = {},
 }) => {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(inputProps.value ? inputProps.value : "");
 
   return (
     <div className="text-input">

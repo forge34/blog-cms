@@ -1,0 +1,7 @@
+.container {
+  form {
+    all: unset;
+  }
+
+  padding: 1em;
+}

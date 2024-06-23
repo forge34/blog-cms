@@ -4,7 +4,8 @@ import { LoginAction } from "./hooks-loaders/actions";
 import Home from "./home";
 import PostPage from "./posts-page";
 import CommentsPage from "./comments-page";
-import PostEditPage from "./edit-page";
+import CommentEditPage from "./comment-edit-page";
+import PostEditPage from "./post-edit-page";
 
 const routes = createBrowserRouter([
   {
@@ -29,13 +30,16 @@ const routes = createBrowserRouter([
           });
         },
         element: <PostPage></PostPage>,
-        children: [
-          {
-            path: "edit",
-            elemnt: PostEditPage,
-          },
-        ],
       },
+      {
+        path: "post/edit",
+        element: <PostEditPage></PostEditPage>,
+      },
+      {
+        path: "comment/edit",
+        element: <CommentEditPage></CommentEditPage>,
+      },
+
       {
         path: "comments",
         loader: () => {

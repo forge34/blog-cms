@@ -1,8 +1,9 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import styles from "./styles/post-page.module.css";
 
 function PostPage() {
   const data = useLoaderData();
+  const navigate = useNavigate();
 
   async function handleDelete(id) {
     await fetch(`http://localhost:3000/api/posts/${id}`, {
@@ -24,7 +25,15 @@ function PostPage() {
               </div>
               <h3 className={styles.title}>{it.title}</h3>
             </div>
-            <button type="button" className={styles.editBtn}>
+            <button
+              type="button"
+              onClick={() => {
+                navigate("/user/post/edit", {
+                  state: { id: it._id, title: it.title, body: it.body },
+                });
+              }}
+              className={styles.editBtn}
+            >
               Edit
             </button>
 
