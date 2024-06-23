@@ -3,6 +3,8 @@ import Login from "./login";
 import { LoginAction } from "./hooks-loaders/actions";
 import Home from "./home";
 import PostPage from "./posts-page";
+import CommentsPage from "./comments-page";
+import PostEditPage from "./edit-page";
 
 const routes = createBrowserRouter([
   {
@@ -27,9 +29,22 @@ const routes = createBrowserRouter([
           });
         },
         element: <PostPage></PostPage>,
+        children: [
+          {
+            path: "edit",
+            elemnt: PostEditPage,
+          },
+        ],
       },
       {
         path: "comments",
+        loader: () => {
+          return fetch("http://localhost:3000/api/user/comments", {
+            mode: "cors",
+            credentials: "include",
+          });
+        },
+        element: <CommentsPage></CommentsPage>,
       },
     ],
   },
