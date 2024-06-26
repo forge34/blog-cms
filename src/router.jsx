@@ -24,10 +24,13 @@ const routes = createBrowserRouter([
       {
         path: "posts",
         loader: () => {
-          return fetch("http://localhost:3000/api/user/posts", {
-            mode: "cors",
-            credentials: "include",
-          });
+          return fetch(
+            "https://blog-backend-production-8991.up.railway.app/api/user/posts",
+            {
+              mode: "cors",
+              credentials: "include",
+            }
+          );
         },
         element: <PostPage></PostPage>,
       },
@@ -43,10 +46,13 @@ const routes = createBrowserRouter([
       {
         path: "comments",
         loader: () => {
-          return fetch("http://localhost:3000/api/user/comments", {
-            mode: "cors",
-            credentials: "include",
-          });
+          return fetch(
+            "https://blog-backend-production-8991.up.railway.app/api/user/comments",
+            {
+              mode: "cors",
+              credentials: "include",
+            }
+          );
         },
         element: <CommentsPage></CommentsPage>,
       },

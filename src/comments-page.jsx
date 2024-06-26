@@ -6,11 +6,14 @@ function CommentsPage() {
 
   const navigate = useNavigate();
   async function handleDelete(id) {
-    let res = await fetch(`http://localhost:3000/api/comments/${id}`, {
-      mode: "cors",
-      method: "delete",
-      credentials: "include",
-    });
+    let res = await fetch(
+      `https://blog-backend-production-8991.up.railway.app/api/comments/${id}`,
+      {
+        mode: "cors",
+        method: "delete",
+        credentials: "include",
+      }
+    );
     res = await res.json();
 
     console.log(res);

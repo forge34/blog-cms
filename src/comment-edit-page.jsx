@@ -22,8 +22,10 @@ function CommentEditPage() {
     };
 
     await fetch(
-      "http://localhost:3000/api/comments/" + state.id + "/edit",
-      options,
+      "https://blog-backend-production-8991.up.railway.app/api/comments/" +
+        state.id +
+        "/edit",
+      options
     );
     navigate("/user/comments");
   }

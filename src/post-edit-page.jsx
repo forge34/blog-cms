@@ -26,8 +26,10 @@ function PostEditPage() {
     };
 
     await fetch(
-      "http://localhost:3000/api/posts/" + state.id + "/edit",
-      options,
+      "https://blog-backend-production-8991.up.railway.app/api/posts/" +
+        state.id +
+        "/edit",
+      options
     );
 
     navigate("/user/posts");

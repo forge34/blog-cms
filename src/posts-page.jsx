@@ -6,11 +6,14 @@ function PostPage() {
   const navigate = useNavigate();
 
   async function handleDelete(id) {
-    await fetch(`http://localhost:3000/api/posts/${id}`, {
-      mode: "cors",
-      method: "delete",
-      credentials: "include",
-    });
+    await fetch(
+      `https://blog-backend-production-8991.up.railway.app/api/posts/${id}`,
+      {
+        mode: "cors",
+        method: "delete",
+        credentials: "include",
+      }
+    );
   }
 
   return (

@@ -12,7 +12,10 @@ async function LoginAction({ request }) {
       "Content-Type": "Application/json",
     },
   };
-  return fetch("http://localhost:3000/api/login", options);
+  return fetch(
+    "https://blog-backend-production-8991.up.railway.app/api/login",
+    options
+  );
 }
 
 export { LoginAction };
