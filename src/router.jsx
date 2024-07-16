@@ -10,7 +10,7 @@ import PostEditPage from "./post-edit-page";
 const routes = createBrowserRouter([
   {
     path: "/",
-    element: <Navigate to={"/users"}></Navigate>,
+    element: <Navigate to={"/user"}></Navigate>,
   },
   {
     path: "/login",
@@ -24,13 +24,10 @@ const routes = createBrowserRouter([
       {
         path: "posts",
         loader: () => {
-          return fetch(
-            "https://blog-backend-production-8991.up.railway.app/api/user/posts",
-            {
-              mode: "cors",
-              credentials: "include",
-            }
-          );
+          return fetch(`${import.meta.env.VITE_API_URL}/api/user/posts`, {
+            mode: "cors",
+            credentials: "include",
+          });
         },
         element: <PostPage></PostPage>,
       },
@@ -46,13 +43,10 @@ const routes = createBrowserRouter([
       {
         path: "comments",
         loader: () => {
-          return fetch(
-            "https://blog-backend-production-8991.up.railway.app/api/user/comments",
-            {
-              mode: "cors",
-              credentials: "include",
-            }
-          );
+          return fetch(`${import.meta.env.VITE_API_URL}/api/user/comments`, {
+            mode: "cors",
+            credentials: "include",
+          });
         },
         element: <CommentsPage></CommentsPage>,
       },

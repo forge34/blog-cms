@@ -7,7 +7,7 @@ function PostPage() {
 
   async function handleDelete(id) {
     await fetch(
-      `https://blog-backend-production-8991.up.railway.app/api/posts/${id}`,
+      `${import.meta.env.VITE_API_URL}/api/posts/${id}`,
       {
         mode: "cors",
         method: "delete",

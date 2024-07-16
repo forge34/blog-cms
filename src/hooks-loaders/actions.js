@@ -12,10 +12,7 @@ async function LoginAction({ request }) {
       "Content-Type": "Application/json",
     },
   };
-  return fetch(
-    "https://blog-backend-production-8991.up.railway.app/api/login",
-    options
-  );
+  return fetch(`${import.meta.env.VITE_API_URL}/api/login`, options);
 }
 
 export { LoginAction };

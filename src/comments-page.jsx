@@ -7,12 +7,12 @@ function CommentsPage() {
   const navigate = useNavigate();
   async function handleDelete(id) {
     let res = await fetch(
-      `https://blog-backend-production-8991.up.railway.app/api/comments/${id}`,
+      `${import.meta.env.VITE_API_URL}/api/comments/${id}`,
       {
         mode: "cors",
         method: "delete",
         credentials: "include",
-      }
+      },
     );
     res = await res.json();
 

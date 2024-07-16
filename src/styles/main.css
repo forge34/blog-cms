@@ -6,7 +6,7 @@
 body,
 body > #root {
   min-height: 100dvh;
-  width: 100dvw;
+  min-width: 100dvw;
 }
 
 .form {
